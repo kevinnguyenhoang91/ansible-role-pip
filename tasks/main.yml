@@ -12,4 +12,5 @@
     virtualenv: "{{ item.virtualenv | default(omit) }}"
     state: "{{ item.state | default(omit) }}"
     executable: "{{ pip_executable }}"
+    break_system_packages: true
   loop: "{{ pip_install_packages }}"
