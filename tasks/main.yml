@@ -11,6 +11,7 @@
     version: "{{ item.version | default(omit) }}"
     virtualenv: "{{ item.virtualenv | default(omit) }}"
     state: "{{ item.state | default(omit) }}"
-    executable: "{{ pip_executable }}"
-    break_system_packages: true
+    # executable: "{{ pip_executable }}"
+    # break_system_packages: true
+    extra_args: "{{ item.extra_args | default(omit) }}"
   loop: "{{ pip_install_packages }}"
